@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerenciamento de Clientes</title>
+  </head>
+  <body>
+    <h1>Gerenciamento de Clientes</h1>
+    <form method="post">
+      <div>
+        {{ form.csrf_token() }} {{form.nome.label(class="")}}
+        {{form.nome(class="")}} {{form.email.label(class="")}}
+        {{form.email(class="")}} {{form.idade.label(class="")}}
+        {{form.idade(class="")}} {{form.numero.label(class="")}}
+        {{form.numero(class="")}} {{form.cpf.label(class="")}}
+        {{form.cpf(class="")}} {{form.Submit(class="")}}
+      </div>
+    </form>
+  </body>
+</html>

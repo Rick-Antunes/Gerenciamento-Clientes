@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Detalhes do Cliente</title>
+  </head>
+  <body>
+    <h1>Detalhes de {{ cliente.nome }}</h1>
+    <h1>email {{ cliente.email }}</h1>
+    <h1>idade {{ cliente.idade }}</h1>
+    <h1>numero {{ cliente.numero }}</h1>
+    <h1>cpf {{ cliente.cpf }}</h1>
+    <p>
+      <strong>Data de Cadastro:</strong> {{
+      cliente.data_cadastro.strftime('%d/%m/%Y %H:%M:%S') }}
+    </p>
+    <p><strong>Status:</strong> {{ cliente.calcular_mensagem() }}</p>
+
+    <a href="{{ url_for('indexPage') }}">Voltar à Lista de Clientes</a>
+  </body>
+</html>

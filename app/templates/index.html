@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fidelidade</title>
+  </head>
+  <body>
+    <h2>Lista de Clientes</h2>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Data de Cadastro</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for cliente in clientes %}
+        <tr>
+          <td>
+            <a href="{{ url_for('detalhes_cliente', cliente_id=cliente.id) }}">
+              {{ cliente.nome }}
+            </a>
+          </td>
+          <td>{{ cliente.data_cadastro.strftime('%d/%m/%Y %H:%M:%S') }}</td>
+          <td>{{ cliente.calcular_mensagem() }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <a href="cadastro">Cadastro</a>
+  </body>
+</html>
